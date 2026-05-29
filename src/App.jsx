@@ -52,6 +52,7 @@ import './App.css'
 import DensityCalc from './components/Density/DensityCalc'
 import OctaneCalc from './components/Octane/OctaneCalc'
 import SulfurCalc from './components/Sulfur/SulfurCalc'
+import ErrorCalc from './components/MeasureErr/ErrorCalc'
 
 function App() {
   const [activeTab, setActiveTab] = useState(null)
@@ -84,7 +85,7 @@ function App() {
         <div className='center'>
           {activeTab === 'density' && <DensityCalc />}
           {activeTab === 'octane' && <OctaneCalc />}
-          {activeTab === 'error' && <div>Error calculator</div>}
+          {activeTab === 'error' && <ErrorCalc/>}
           {activeTab === 'sulfur' && <SulfurCalc/> }
         </div>
       </section>
