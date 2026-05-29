@@ -1,4 +1,4 @@
-.density-container {
+.octane-container {
   max-width: 400px;
   margin: 40px auto;
   padding: 30px;
@@ -8,7 +8,7 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-.density-container h2 {
+.octane-container h2 {
   text-align: center;
   color: #2c3e50;
   margin-bottom: 24px;
@@ -34,33 +34,14 @@
   border-radius: 8px;
   font-size: 1rem;
   outline: none;
+  background-color: #ffffff;
   transition: box-shadow 0.3s ease, border 0.3s ease;
-  background-color: #ffff;
-  color: black;
 }
 
 .input-group input:focus {
   border-color: #863BFF;
   box-shadow: 0 0 0 3px rgba(134, 59, 255, 0.25);
 }
-
-.result {
-  margin-top: 24px;
-  padding: 16px;
-  background: #f0f7ff;
-  border-left: 4px solid #3498db;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #2c3e50;
-}
-
-.result span {
-  font-weight: 700;
-  color: #3498db;
-  font-size: 1.1rem;
-}
-
-/*! To remove arrows on inputs */
 
 .input-group input::-webkit-outer-spin-button,
 .input-group input::-webkit-inner-spin-button {
@@ -72,13 +53,28 @@
   -moz-appearance: textfield;
 }
 
-/*TODO: Status box-un css kodlari */
+.result {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f0f7ff;
+  border-left: 4px solid #863BFF;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2c3e50;
+  line-height: 1.8;
+}
+
+.result span {
+  font-weight: 700;
+  color: #863BFF;
+  font-size: 1.1rem;
+}
 
 .status-box {
   margin-top: 16px;
   padding: 14px;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   text-align: center;
   transition: all 0.3s ease;
