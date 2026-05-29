@@ -1,0 +1,97 @@
+.density-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.density-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  background-color: #ffff;
+  color: black;
+}
+
+.input-group input:focus {
+  border-color: #863BFF;
+  box-shadow: 0 0 0 3px rgba(134, 59, 255, 0.25);
+}
+
+.result {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f0f7ff;
+  border-left: 4px solid #3498db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.result span {
+  font-weight: 700;
+  color: #3498db;
+  font-size: 1.1rem;
+}
+
+/*! To remove arrows on inputs */
+
+.input-group input::-webkit-outer-spin-button,
+.input-group input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-group input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/*TODO: Status box-un css kodlari */
+
+.status-box {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.accepted {
+  background-color: #d4edda;
+  color: #1e7e34;
+  border: 1px solid #b2dfbf;
+}
+
+.rejected {
+  background-color: #fde8e8;
+  color: #c0392b;
+  border: 1px solid #f5c6cb;
+}

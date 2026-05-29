@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import DensityCalc from './components/Density/DensityCalc'
 
 function App() {
   const [isActiveDensity, setIsActiveDensity] = useState(0)
@@ -33,7 +34,7 @@ function App() {
           </li>
         </ul>
         <div className='center'>
-          {isActiveDensity ? <div>Density calculator</div> : 
+          {isActiveDensity ? <DensityCalc/> : 
           isActiveErr? <div>Error calculator</div> : 
           isActiveOctane? <div>Octane calculator</div> : 
           <></>}
