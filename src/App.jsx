@@ -1,96 +1,56 @@
-// import { useState } from 'react'
-// import './App.css'
-// import DensityCalc from './components/Density/DensityCalc'
-// import OctaneCalc from './components/Octane/OctaneCalc'
+import { useState } from 'react';
+import './App.css';
 
-// function App() {
-//   const [isActiveDensity, setIsActiveDensity] = useState(0)
-//   const [isActiveOctane, setIsActiveOctane] = useState(0)
-//   const [isActiveErr, setIsActiveErr] = useState(0)
-
-//   return (
-//     <>
-//       <section id="center">
-//         <ul className='buttons'>
-//           <li onClick={() => {
-//             setIsActiveDensity(1);
-//             setIsActiveErr(0);
-//             setIsActiveOctane(0);
-//           }}>
-//             Sıxlıq hesablayıcısı
-//           </li>
-//           <li onClick={() => {
-//             setIsActiveDensity(0);
-//             setIsActiveErr(0);
-//             setIsActiveOctane(1);
-//           }}>
-//             Oktan ədədinin müqayisəsi
-//           </li>
-//           <li onClick={() => {
-//             setIsActiveDensity(0);
-//             setIsActiveErr(1);
-//             setIsActiveOctane(0);
-//           }}>
-//             Ölçmə xətasının hesablanması
-//           </li>
-//         </ul>
-//         <div className='center'>
-//           {isActiveDensity ? <DensityCalc/> : 
-//           isActiveErr? <div>Error calculator</div> : 
-//           isActiveOctane? <OctaneCalc/> : 
-//           <></>}
-//         </div>
-//       </section>
-//     </>
-//   )
-// }
-
-// export default App
-
-import { useState } from 'react'
-import './App.css'
-import DensityCalc from './components/Density/DensityCalc'
-import OctaneCalc from './components/Octane/OctaneCalc'
-import SulfurCalc from './components/Sulfur/SulfurCalc'
-import ErrorCalc from './components/MeasureErr/ErrorCalc'
+import DensityCalc from './components/Density/DensityCalc';
+import OctaneCalc from './components/Octane/OctaneCalc';
+import SulfurCalc from './components/Sulfur/SulfurCalc';
+import ErrorCalc from './components/MeasureErr/ErrorCalc';
 
 function App() {
-  const [activeTab, setActiveTab] = useState(null)
+  const [activeTab, setActiveTab] = useState('density'); // Default tab
+
+  const tabs = [
+    { id: 'density', label: 'Sıxlıq Kalkulyatoru', icon: '📏' },
+    { id: 'octane', label: 'Oktan Ədədi', icon: '⛽' },
+    { id: 'sulfur', label: 'Kükürd Miqdarı', icon: '⚗️' },
+    { id: 'error', label: 'Ölçmə Xətası', icon: '📐' },
+  ];
 
   return (
-    <>
-      <section id="center">
-        <ul className='buttons'>
-          <li
-            className={`tab-btn ${activeTab === 'density' ? 'active' : ''}`}
-            onClick={() => setActiveTab('density')}>
-            Sıxlıq hesablayıcısı
-          </li>
-          <li
-            className={`tab-btn ${activeTab === 'octane' ? 'active' : ''}`}
-            onClick={() => setActiveTab('octane')}>
-            Oktan ədədinin müqayisəsi
-          </li>
-          <li
-            className={`tab-btn ${activeTab === 'sulfur' ? 'active' : ''}`}
-            onClick={() => setActiveTab('sulfur')}>
-            Kükürd miqdarı
-          </li>
-          <li
-            className={`tab-btn ${activeTab === 'error' ? 'active' : ''}`}
-            onClick={() => setActiveTab('error')}>
-            Ölçmə xətasının hesablanması
-          </li>
+    <div className="app-container">
+      <div className="app-header">
+        <div className="app-icon">🧪</div>
+        <h1 className="app-title">Yanacaq Keyfiyyət Kalkulyatorları</h1>
+        <p className="app-subtitle">
+          Laboratoriya standartlarına uyğun yanacaq analizi alətləri
+        </p>
+      </div>
+
+      {/* Tabs */}
+      <div className="tabs-container">
+        <ul className="tabs">
+          {tabs.map((tab) => (
+            <li
+              key={tab.id}
+              className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              <span style={{ marginRight: '8px' }}>{tab.icon}</span>
+              {tab.label}
+            </li>
+          ))}
         </ul>
-        <div className='center'>
-          {activeTab === 'density' && <DensityCalc />}
-          {activeTab === 'octane' && <OctaneCalc />}
-          {activeTab === 'error' && <ErrorCalc/>}
-          {activeTab === 'sulfur' && <SulfurCalc/> }
-        </div>
-      </section>
-    </>
-  )
+      </div>
+
+      {/* Calculator Content */}
+      <div className="content-area">
+        {activeTab === 'density' && <DensityCalc />}
+        {activeTab === 'octane' && <OctaneCalc />}
+        {activeTab === 'sulfur' && <SulfurCalc />}
+        {activeTab === 'error' && <ErrorCalc />}
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
