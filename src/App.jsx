@@ -14,20 +14,29 @@ function App() {
             setIsActiveDensity(1);
             setIsActiveErr(0);
             setIsActiveOctane(0);
-          }}>Sıxlıq hesablayıcısı</li>
+          }}>
+            Sıxlıq hesablayıcısı
+          </li>
           <li onClick={() => {
             setIsActiveDensity(0);
             setIsActiveErr(0);
             setIsActiveOctane(1);
-          }}>Oktan ədədinin müqayisəsi</li>
+          }}>
+            Oktan ədədinin müqayisəsi
+          </li>
           <li onClick={() => {
             setIsActiveDensity(0);
             setIsActiveErr(1);
             setIsActiveOctane(0);
-          }}>Ölçmə xətasının hesablanması</li>
+          }}>
+            Ölçmə xətasının hesablanması
+          </li>
         </ul>
-        <div>
-          {isActiveDensity ? <div>density calculator</div> : isActiveErr? <div>Error calculator</div> : isActiveOctane? <div>Octane calculator</div> : <></>}
+        <div className='center'>
+          {isActiveDensity ? <div>Density calculator</div> : 
+          isActiveErr? <div>Error calculator</div> : 
+          isActiveOctane? <div>Octane calculator</div> : 
+          <></>}
         </div>
       </section>
     </>
