@@ -51,6 +51,7 @@ import { useState } from 'react'
 import './App.css'
 import DensityCalc from './components/Density/DensityCalc'
 import OctaneCalc from './components/Octane/OctaneCalc'
+import SulfurCalc from './components/Sulfur/SulfurCalc'
 
 function App() {
   const [activeTab, setActiveTab] = useState(null)
@@ -84,7 +85,7 @@ function App() {
           {activeTab === 'density' && <DensityCalc />}
           {activeTab === 'octane' && <OctaneCalc />}
           {activeTab === 'error' && <div>Error calculator</div>}
-          {activeTab === 'sulfur' && <div>Sulfur calculator</div>}
+          {activeTab === 'sulfur' && <SulfurCalc/> }
         </div>
       </section>
     </>

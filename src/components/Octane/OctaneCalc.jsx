@@ -10,7 +10,7 @@ const OctaneCalc = () => {
 
   return (
     <div className="octane-container">
-      <h2>Oktan Ədədi Kalkulatoru</h2>
+      <h2>Oktan Ədədi Müqayisəsi</h2>
 
       <div className="input-group">
         <label htmlFor="measured">Ölçülmüş oktan ədədi (ON)</label>

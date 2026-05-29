@@ -1,0 +1,294 @@
+/* ─── SulfurCalc.css ─────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+/* ── Page wrapper ── */
+.sulfur-page {
+  min-height: 100vh;
+  background: #0d1117;
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(230, 160, 20, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(20, 160, 200, 0.07) 0%, transparent 55%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* ── Card ── */
+.sulfur-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 560px;
+  padding: 2rem;
+  box-shadow:
+    0 0 0 1px rgba(230, 160, 20, 0.08),
+    0 24px 64px rgba(0, 0, 0, 0.6);
+  animation: cardIn 0.4s ease both;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ── */
+.sulfur-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #21262d;
+}
+
+.sulfur-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sulfur-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e6a014;
+  margin: 0 0 0.2rem;
+  letter-spacing: -0.02em;
+}
+
+.sulfur-subtitle {
+  font-size: 0.82rem;
+  color: #8b949e;
+  margin: 0;
+}
+
+/* ── Formula box ── */
+.sulfur-formula-box {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #58a6ff;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+/* ── Info strip ── */
+.sulfur-info-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(230, 160, 20, 0.06);
+  border: 1px solid rgba(230, 160, 20, 0.15);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.78rem;
+  color: #c9a84c;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sulfur-info-strip strong {
+  color: #e6a014;
+}
+
+/* ── Inputs ── */
+.sulfur-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.sulfur-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.sulfur-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sulfur-unit {
+  font-weight: 400;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #58a6ff;
+  font-size: 0.72rem;
+  background: rgba(88, 166, 255, 0.1);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.sulfur-input {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  color: #e6edf3;
+  font-size: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sulfur-input::placeholder {
+  color: #484f58;
+}
+
+.sulfur-input:focus {
+  border-color: #e6a014;
+  box-shadow: 0 0 0 3px rgba(230, 160, 20, 0.12);
+}
+
+/* ── Buttons ── */
+.sulfur-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.sulfur-btn-calc,
+.sulfur-btn-reset {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'IBM Plex Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.sulfur-btn-calc {
+  background: #e6a014;
+  color: #0d1117;
+}
+
+.sulfur-btn-calc:hover {
+  background: #f5b731;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(230, 160, 20, 0.3);
+}
+
+.sulfur-btn-calc:active {
+  transform: translateY(0);
+}
+
+.sulfur-btn-reset {
+  background: transparent;
+  color: #8b949e;
+  border: 1px solid #30363d;
+}
+
+.sulfur-btn-reset:hover {
+  border-color: #8b949e;
+  color: #e6edf3;
+}
+
+/* ── Result ── */
+.sulfur-result {
+  border-radius: 10px;
+  padding: 1.25rem;
+  animation: resultIn 0.3s ease both;
+  text-align: center;
+}
+
+@keyframes resultIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.result-pass {
+  background: rgba(35, 134, 54, 0.1);
+  border: 1px solid rgba(35, 134, 54, 0.35);
+}
+
+.result-fail {
+  background: rgba(218, 54, 51, 0.1);
+  border: 1px solid rgba(218, 54, 51, 0.35);
+}
+
+.result-error {
+  background: rgba(210, 153, 34, 0.1);
+  border: 1px solid rgba(210, 153, 34, 0.35);
+}
+
+.result-icon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.result-values {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  color: #e6edf3;
+  flex-wrap: wrap;
+}
+
+.result-op {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #58a6ff;
+}
+
+.result-message {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: #e6edf3;
+}
+
+.result-note {
+  font-size: 0.78rem;
+  color: #8b949e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .sulfur-card {
+    padding: 1.25rem;
+  }
+
+  .sulfur-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .sulfur-title {
+    font-size: 1.15rem;
+  }
+
+  .sulfur-info-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .sulfur-buttons {
+    flex-direction: column;
+  }
+}
