@@ -3,6 +3,7 @@
 
 .app-container {
   min-height: 100vh;
+  min-width: 100%;
   background: #0d1117;
   background-image:
     radial-gradient(ellipse at 30% 20%, rgba(230, 160, 20, 0.06) 0%, transparent 60%),
@@ -17,7 +18,7 @@
 .app-header {
   text-align: center;
   margin-bottom: 2.5rem;
-  max-width: 620px;
+  max-width: 750px;
 }
 
 .app-icon {
@@ -49,7 +50,7 @@
   margin-bottom: 2rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   width: 100%;
-  max-width: 620px;
+  max-width: 750px;
 }
 
 .tabs {

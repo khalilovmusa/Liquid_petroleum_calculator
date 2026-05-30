@@ -42,7 +42,7 @@ const ErrorCalc = () => {
       <div className="error-card">
         {/* Header */}
         <div className="error-header">
-          <div className="error-icon">📏</div>
+          <div className="error-icon">📐</div>
           <div>
             <h1 className="error-title">Ölçmə Xətasının Hesablanması</h1>
             <p className="error-subtitle">Nisbi xətanın qiymətləndirilməsi</p>
